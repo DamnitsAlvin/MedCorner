@@ -1,5 +1,5 @@
 # MedCorner
-&lt;b>An Online Medical Store&lt;/b>
+<b>An Online Medical Store</b>
 Work In Progress
 
 
