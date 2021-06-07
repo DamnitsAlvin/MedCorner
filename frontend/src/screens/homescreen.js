@@ -35,7 +35,7 @@ export default function Homepage(){
                     <div className="collection_data">
                     <span>Medicine</span>
                     <h1>Over the Counter</h1>
-                        <a href="">Click here</a>
+                        <a href="/">Click here</a>
                     </div>
                     </div>
 
@@ -49,7 +49,7 @@ export default function Homepage(){
                     <div className="collection_data">
                     <span>Medicine</span>
                     <h1>Prescription</h1>
-                    <a href="">Click here</a>
+                    <a href="/">Click here</a>
                     </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ export default function Homepage(){
         <div className="row">
             <div className="col-lg-3 col-md-6 col-sm-6">
             <div className="box-div">
-                <a><img className="guideicon" src="./icons/search.png"/></a>
+                <img className="guideicon" src="./icons/search.png"/>
                 <h1>Search</h1>
                 <p>
                 Search and browse for your needed medicine.

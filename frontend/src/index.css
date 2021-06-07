@@ -97,3 +97,7 @@ code {
 .order-card ul li{
   margin-left:10px;
 }
+button.small {
+  font-size: 1.2rem;
+  margin-left: 10px;
+}

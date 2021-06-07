@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {Link} from "react-router-dom"; 
 import {saveShippingAddress} from "../action/cartActions"; 
 import CheckoutSteps from "../components/checkOut";
 

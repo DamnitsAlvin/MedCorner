@@ -10,7 +10,11 @@ import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 import PaymentMethodScreen from "./screens/paymentMethodScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
+import OrderHistoryScreen from "./screens/OrderHistoryScreen";
+import AdminRoute from "./components/AdminRoute";
+import ProductEditScreen from "./screens/ProductEditScreen";
 import {signout} from "./action/userAction";
+import ProductListScreen from './screens/ProductListScreen';
 
 function App() {
   const cart = useSelector(x => x.cart); 
@@ -52,8 +56,8 @@ function App() {
       
 
       <div className="nav-items">
-        <li><a href="#">Prescription</a></li>
-        <li><a href="#">Over the Counter</a></li>
+        <li><Link to="/">Prescription</Link></li>
+        <li><Link to="/">Over the Counter</Link></li>
         <li className="nav-item ">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Self Care
@@ -70,25 +74,41 @@ function App() {
               {userInfo.name}
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="/" onClick={signOutHandler}>Sign Out</a>
+                <a className="dropdown-item" href="/myorder">Items Ordered</a>
+                <a className="dropdown-item" onClick={signOutHandler}>Sign Out</a>
               </div>
           </li>
             ):(<li><Link to="/login">Login</Link></li>)
         }
-        
+        {
+          userInfo && userInfo.isAdmin && (
+            <li className="nav-item ">
+            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admin 
+            </a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a className="dropdown-item" href="/productlist">Products</a>
+            </div>
+        </li>
+          )
+        }
       </div>
 
-      <Route path ='/products/:id' component={ItemDetails}></Route>
+      <Route path ="/products/:id/edit" component={ProductEditScreen} exact></Route>  
+      <Route path ='/products/:id' exact component={ItemDetails}></Route>
       <Route path= "/order/:id" component={OrderScreen}/>
       <Route path="/login" component={Login}/>
       <Route path="/register" component={Register}/>
       <Route path="/payment" component={PaymentMethodScreen}/>
-
+      <Route path="/myorder" component={OrderHistoryScreen}/>
+      
       <Route path="/shipping" component={ShippingAddressScreen}/>
       <Route path="/placeorder" component={PlaceOrderScreen}/>
       <Route path ="/cart/:id" component ={CartScreen}></Route>
       <Route path="/cart" exact component={CartScreen}/>
       <Route path="/" exact component={Homepage}/>
+
+      <AdminRoute path="/productlist" component={ProductListScreen}></AdminRoute>
 
         
     <footer id="main-footer">  

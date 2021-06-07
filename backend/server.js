@@ -5,6 +5,7 @@ import productRouter from "./Routers/productRouter.js";
 import orderRouter from "./Routers/orderRouter.js";
 import dotenv from "dotenv";
 import cors from "cors";
+import uploadRouter from "./Routers/uploadRouter.js";
 
 
 dotenv.config();
@@ -22,6 +23,7 @@ mongoose.connect(process.env.MONGODB_URL ||  "mongodb://localhost/medcorner", {
 app.use("/api/users", UserRouter);
 app.use("/api/products", productRouter);
 app.use("/api/orders", orderRouter);
+app.use("/api/uploads", uploadRouter);
 
 app.get("/", (req,res)=>{
     res.send("Server is ready");

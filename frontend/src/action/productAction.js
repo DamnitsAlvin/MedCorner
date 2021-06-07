@@ -19,11 +19,12 @@ import Axios from 'axios';
     
 
 export const listProducts=()=>async(dispatch)=>{
+    console.log("Called listProducts!");
     dispatch({
         type:PRODUCT_LIST_REQUEST
     });
     try{
-        const {data}=await Axios.get('http://localhost:3000/api/products');
+        const {data}=await Axios.get('/api/products/');
         dispatch({type:PRODUCT_LIST_SUCCESS, payload:data});
     }catch(error){
         dispatch({type:PRODUCT_LIST_FAIL, payload:error.message});
