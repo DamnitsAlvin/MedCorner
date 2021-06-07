@@ -48,12 +48,13 @@ code {
   font-weight: bold;
 }
 .checkout-steps > div.active {
-  border-top-color: #f08000;
-  color: #f08000;
+  border-top-color: #D40B0B;
+  color: #D40B0B;
 }
 .form {
   max-width: 60rem;
   margin: 0 auto;
+  color: black;
 }
 
 .form > div {
@@ -64,6 +65,10 @@ code {
 .form label {
   margin: 1rem 0;
   display: block;
+}
+.form input {
+  padding: 5px;
+  padding-left: 10px;
 }
 
 .top{
@@ -86,18 +91,22 @@ code {
 }
 .order-card{
   padding:10px;
-  border: 2px solid black;
-  
+}
+.order-card h2{
+  font-weight: 700;
 }
 .order-card ul{
   display: flex;
   flex-direction: column;
-  padding:10px;
+  padding:1px;
 }
 .order-card ul li{
-  margin-left:10px;
+  margin-left:1px;
 }
-button.small {
-  font-size: 1.2rem;
-  margin-left: 10px;
+
+.primary{
+  color: whitesmoke;
+  background-color: #D40B0B;
+  border-radius: 5px;
+  padding: 15px;
 }
