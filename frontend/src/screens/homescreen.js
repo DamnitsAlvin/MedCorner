@@ -75,16 +75,13 @@ export default function Homepage(){
         {loading ? (<Loading></Loading>)
             :error ? (<MessageBox>{error}</MessageBox>)
             :(
-                <section className="slider">
-                   
-                    
-                    {
-                        products.map(product=>(
-                            <ProductCard key={product._id} product = {product}></ProductCard>
-                        ))
-                    }
-                
-                   
+                <section className="slider">         
+                {
+                    products.map(product=>(
+                        <ProductCard key={product._id} product = {product}></ProductCard>
+                    ))
+                }
+                              
                 </section>
             )
         }
