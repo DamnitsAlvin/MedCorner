@@ -59,6 +59,30 @@ UserRouter.post(
         });
     })
 )
+UserRouter.put(
+    '/profile',
+    isAuth,
+    expressAsyncHandler(async (req, res) => {
+        let id = mongoose.Types.ObjectId(req.user._id);
+        console.log(req.user._id);
+      const user = await User.findById(id);
+      if (user) {
+        user.name = req.body.name || user.name;
+        user.email = req.body.email || user.email;
+        if (req.body.password) {
+          user.password = bcrypt.hashSync(req.body.password, 8);
+        }
+        const updatedUser = await user.save();
+        res.send({
+          _id: updatedUser._id,
+          name: updatedUser.name,
+          email: updatedUser.email,
+          isAdmin: updatedUser.isAdmin,
+          token: generateToken(updatedUser),
+        });
+      }
+    })
+  );
 UserRouter.get(
     '/:id',
     expressAsyncHandler(async (req, res) => {
@@ -117,28 +141,5 @@ UserRouter.put(
         }
     })
 ); 
-UserRouter.put(
-    '/profile',
-    isAuth,
-    expressAsyncHandler(async (req, res) => {
-        let id = mongoose.Types.ObjectId(req.user._id);
-        console.log(req.user._id);
-      const user = await User.findById(id);
-      if (user) {
-        user.name = req.body.name || user.name;
-        user.email = req.body.email || user.email;
-        if (req.body.password) {
-          user.password = bcrypt.hashSync(req.body.password, 8);
-        }
-        const updatedUser = await user.save();
-        res.send({
-          _id: updatedUser._id,
-          name: updatedUser.name,
-          email: updatedUser.email,
-          isAdmin: updatedUser.isAdmin,
-          token: generateToken(updatedUser),
-        });
-      }
-    })
-  );
+
 export default UserRouter

@@ -80,7 +80,7 @@ function App() {
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item" href="/myorder">Items Ordered</a>
                 <a className="dropdown-item" href="/profile">Profile</a>
-                <a className="dropdown-item" onClick={signOutHandler}>Sign Out</a>
+                <a className="dropdown-item" onClick={signOutHandler} href="/">Sign Out</a>
               </div>
           </li>
             ):(<li><Link to="/login">Login</Link></li>)
