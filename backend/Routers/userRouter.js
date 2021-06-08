@@ -3,7 +3,8 @@ import expressAsyncHandler from "express-async-handler";
 import bcrypt from "bcryptjs";
 import User from "../Model/userModel.js"; 
 import data from "../userdata.js";
-import {generateToken} from "../utils.js";
+import {isAuth, isAdmin, generateToken} from "../utils.js";
+import mongoose from "mongoose";
 
 const UserRouter = express.Router();
 
@@ -58,4 +59,86 @@ UserRouter.post(
         });
     })
 )
+UserRouter.get(
+    '/:id',
+    expressAsyncHandler(async (req, res) => {
+      const user = await User.findById(req.params.id);
+      if (user) {
+        res.send(user);
+      } else {
+        res.status(404).send({ message: 'User Not Found' });
+      }
+    })
+  );
+
+UserRouter.get(
+    "/", 
+    isAuth,
+    isAdmin, 
+    expressAsyncHandler(async(req,res)=>{
+        const users = await User.find({});
+        res.send(users);
+    })
+); 
+
+UserRouter.delete(
+    "/:id", 
+    isAuth, 
+    isAdmin, 
+    expressAsyncHandler(async(req,res)=>{
+        const user = await User.findById(req.params.id); 
+        if(user){
+            if(user.email === "sc@example.com"){
+                res.status(400).send({message: "cannot delete admin user"}); 
+                return;
+            }
+            const deleteUser = await user.remove(); 
+            res.send({message: "User was deleted!", user:deleteUser});
+        }else{
+            res.status(404).send({message: "User not found"});
+        }
+    })
+); 
+UserRouter.put(
+    "/:id", 
+    isAuth, 
+    isAdmin, 
+    expressAsyncHandler(async(req,res)=>{
+        const user = await User.findById(req.params.id); 
+        if(user){
+            user.name = req.body.name || user.name; 
+            user.email = req.body.email || user.email;
+            user.isAdmin = req.body.isAdmin || user.isAdmin;
+            const updatedUser = await user.save();
+            res.send({message: "User was updated", User:updatedUser});
+
+        }else{
+            res.status(405).send({message: "No user Found!"});
+        }
+    })
+); 
+UserRouter.put(
+    '/profile',
+    isAuth,
+    expressAsyncHandler(async (req, res) => {
+        let id = mongoose.Types.ObjectId(req.user._id);
+        console.log(req.user._id);
+      const user = await User.findById(id);
+      if (user) {
+        user.name = req.body.name || user.name;
+        user.email = req.body.email || user.email;
+        if (req.body.password) {
+          user.password = bcrypt.hashSync(req.body.password, 8);
+        }
+        const updatedUser = await user.save();
+        res.send({
+          _id: updatedUser._id,
+          name: updatedUser.name,
+          email: updatedUser.email,
+          isAdmin: updatedUser.isAdmin,
+          token: generateToken(updatedUser),
+        });
+      }
+    })
+  );
 export default UserRouter

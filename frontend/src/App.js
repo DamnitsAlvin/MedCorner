@@ -13,8 +13,12 @@ import OrderScreen from "./screens/OrderScreen";
 import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 import AdminRoute from "./components/AdminRoute";
 import ProductEditScreen from "./screens/ProductEditScreen";
+import UserListScreen from "./screens/UserListScreen";
+import UserEditScreen from "./screens/UserEditScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 import {signout} from "./action/userAction";
 import ProductListScreen from './screens/ProductListScreen';
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const cart = useSelector(x => x.cart); 
@@ -75,6 +79,7 @@ function App() {
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item" href="/myorder">Items Ordered</a>
+                <a className="dropdown-item" href="/profile">Profile</a>
                 <a className="dropdown-item" onClick={signOutHandler}>Sign Out</a>
               </div>
           </li>
@@ -88,6 +93,7 @@ function App() {
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <a className="dropdown-item" href="/productlist">Products</a>
+              <a className="dropdown-item" href="/userlist">User</a>
             </div>
         </li>
           )
@@ -101,6 +107,8 @@ function App() {
       <Route path="/register" component={Register}/>
       <Route path="/payment" component={PaymentMethodScreen}/>
       <Route path="/myorder" component={OrderHistoryScreen}/>
+      <PrivateRoute path="/profile" component={ProfileScreen}/>
+ 
       
       <Route path="/shipping" component={ShippingAddressScreen}/>
       <Route path="/placeorder" component={PlaceOrderScreen}/>
@@ -109,7 +117,8 @@ function App() {
       <Route path="/" exact component={Homepage}/>
 
       <AdminRoute path="/productlist" component={ProductListScreen}></AdminRoute>
-
+      <AdminRoute path="/userlist" component={UserListScreen}></AdminRoute>
+      <AdminRoute path="/user/:id/edit" component={UserEditScreen}></AdminRoute>
         
     <footer id="main-footer">  
         <div className="container-1">
