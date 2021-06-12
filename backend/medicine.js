@@ -10,7 +10,7 @@ const Meddata = {
             Date_of_Expiry: "03/22/2022", 
             Category:["Analgesic-antipyretic", "Medicine"], 
             Purpose:"Pain reliever and fever reducer",
-            image: "./img/medicine/biogesic.jpg",
+            image: "/img/medicine/biogesic.jpg",
             countInStock:50
         }, 
         {
@@ -23,7 +23,7 @@ const Meddata = {
             Date_of_Expiry: "11/6/2022",
             Category: ["Anilide"] ,
             Purpose: "Used for the relief of clogged nose, runny nose, postnasal drip, itchy and watery eyes, sneezing, headache, and body aches.",
-            image: "./img/medicine/neozep.jpg",
+            image: "/img/medicine/neozep.jpg",
             countInStock:50
 
         }, 
@@ -37,7 +37,7 @@ const Meddata = {
             Date_of_Expiry: "5/17/2023",
             Category: ["Calcium Channel Blockers", "Antianginal Agents"],
             Purpose: "Prevention and treatment of heart pain or chest pain from angina, and for the treatment of high blood pressure.",
-            image: "./img/medicine/norvasc.jpg",
+            image: "/img/medicine/norvasc.jpg",
             countInStock:50
 
         },
@@ -51,7 +51,7 @@ const Meddata = {
             Date_of_Expiry: "4/30/2024",
             Category: ["Antibiotics-Macrolides"],
             Purpose: "A semi-synthetic macrolide antibiotic used for treating tonsillitis, bronchitis, pneumonia, and sinusitis caused by susceptible bacteria.",
-            image:"./img/medicine/zithromax.jpg",
+            image:"/img/medicine/zithromax.jpg",
             countInStock:50
         },
         {
@@ -64,7 +64,7 @@ const Meddata = {
             Date_of_Expiry: "2/11/2021",
             Category:[ "Anticoagulants", "Antiplatelets", "Fibrinolytics"],
             Purpose: "For the prevention of atherosclerotic events in the peripheral arterial disease, or within 35 days of myocardial infarction or within 6 months of ischemic stroke, or in acute or coronary syndrome without ST-segmental elevation.",
-            image:"./img/medicine/plavix.png",
+            image:"/img/medicine/plavix.png",
             countInStock:50
         },
         {
@@ -77,7 +77,7 @@ const Meddata = {
             Date_of_Expiry:" 9/5/2025",
             Category: ["Antibiotics-Penicillins"],
             Purpose: "It works by stopping the growth of bacteria. This antibiotic treats only bacterial infections.",
-            image:"./img/medicine/amoxil.jpg",
+            image:"/img/medicine/amoxil.jpg",
             countInStock:50
 
         },
@@ -91,7 +91,7 @@ const Meddata = {
             Date_of_Expiry: "9/5/2023",
             Category: ["Nonsteroidal Anti-inflammatory"],
             Purpose: "Relief of headache including migraine, neuralgia; toothache, muscular aches, minor arthritic pain, backache, minor aches & pains associated w/ common cold & menstrual cramps (dysmenorrhea). Reduction of fever.",
-            image:"./img/medicine/medicol.jpg",
+            image:"/img/medicine/medicol.jpg",
             countInStock:50
         }, 
         {
@@ -104,7 +104,7 @@ const Meddata = {
             Date_of_Expiry: "8/15/2025",
             Category: ["Antihistamine"],
             Purpose: "Used to relieve allergy symptoms such as watery eyes, runny nose, itching eyes/nose, sneezing, hives, and itching.",
-            image:"./img/medicine/aforvir.jpg",
+            image:"/img/medicine/aforvir.jpg",
             countInStock:50
         },
         {
@@ -117,7 +117,7 @@ const Meddata = {
             Date_of_Expiry: "11/4/2025",
             Category:[" Beta2 Agonists"],
             Purpose: "Prescription medicine used to treat the symptoms of acute, or exercise induced asthma (Bronchospasm)",
-            image:"./img/medicine/proventil.jpg",
+            image:"/img/medicine/proventil.jpg",
             countInStock:50
         },
         {
@@ -130,7 +130,7 @@ const Meddata = {
             Date_of_Expiry: "6/7/2022",
             Category: ["Skeletal Muscle Relaxants"],
             Purpose: "Prescription medicine used to treat the symptoms of Muscle Spasm.",
-            image:"./img/medicine/amrix.png",
+            image:"/img/medicine/amrix.png",
             countInStock:50
         },
         {
@@ -143,7 +143,7 @@ const Meddata = {
             Date_of_Expiry: "7/16/2024",
             Category: ["cephalosporin antibiotics"],
             Purpose: "Used to treat a wide variety of bacterial infections.",
-            image:"./img/medicine/keflex.jpg",
+            image:"/img/medicine/keflex.jpg",
             countInStock:50
         }, 
         {
@@ -156,7 +156,7 @@ const Meddata = {
             Date_of_Expiry:"8/15/2026",
             Category: ["Antihistamine"],
             Purpose: "Used to relieve symptoms of allergies, such as runny nose, sneezing, or itchy eyes, nose, or throat. This medicine is also given to help redness and itching caused by hives.",
-            image:"./img/medicine/claritin.jpg",
+            image:"/img/medicine/claritin.jpg",
             countInStock:50
 
         },
@@ -170,7 +170,7 @@ const Meddata = {
             Date_of_Expiry: "11/11/2021",
             Category: ["Gabapentinoid"],
             Purpose: "Prevent and control seizures.",
-            image:"./img/medicine/neurontin.png",
+            image:"/img/medicine/neurontin.png",
             countInStock:50
         },
         {
@@ -183,7 +183,7 @@ const Meddata = {
             Date_of_Expiry: "12/19/2025",
             Category: ["oral", "iron bivalent"],
             Purpose: "For iron deficiency anemia and other nutritional anemia.",
-            image:"./img/medicine/fersulfate.jpg",
+            image:"/img/medicine/fersulfate.jpg",
             countInStock:50
 
         },
@@ -197,7 +197,7 @@ const Meddata = {
             Date_of_Expiry: "10/25/2024",
             Category: ["HMG","CoA", "reductase inhibitors"],
             Purpose: "Treatment of dyslipidemia and the prevention of cardiovascular disease.",
-            image:"./img/medicine/atorvast.jpg",
+            image:"/img/medicine/atorvast.jpg",
             countInStock:50
 
         },
@@ -211,7 +211,7 @@ const Meddata = {
             Date_of_Expiry: "9/27/2025",
             Category: ["Nitroimidazole" ,"antibiotics"],
             Purpose: "Primarily used to treat bacterial vaginosis, pelvic inflammatory disease",
-            image:"./img/medicine/flagyl.jpg",
+            image:"/img/medicine/flagyl.jpg",
             countInStock:50
         },
         {
@@ -224,7 +224,7 @@ const Meddata = {
             Date_of_Expiry: "6/28/2026",
             Category: "Nonsteroidal anti-inflammatory drug",
             Purpose: "Used to treat a variety of inflammatory conditions and symptoms that are due to excessive inflammation, such as pain and fever.",
-            image:"./img/medicine/aleve.jpg",
+            image:"/img/medicine/aleve.jpg",
             countInStock:50
 
         },
@@ -238,7 +238,7 @@ const Meddata = {
             Date_of_Expiry: "3/16/2025",
             Category: ["Angiotensin" ,"receptor blocker"],
             Purpose: "Treat hypertension and nephropathy",
-            image:"./img/medicine/cozaar.jpg" ,
+            image:"/img/medicine/cozaar.jpg" ,
             countInStock:50
         },
         {
@@ -251,7 +251,7 @@ const Meddata = {
             Date_of_Expiry: "2/11/2024",
             Category: ["Proton Pump Inhibitors"],
             Purpose: "Used to treat certain stomach and esophagus problems.",
-            image:"./img/medicine/prilosec.jpg",
+            image:"/img/medicine/prilosec.jpg",
             countInStock:50
 
         }

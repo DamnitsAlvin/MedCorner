@@ -75,14 +75,14 @@ export default function Homepage(){
         {loading ? (<Loading></Loading>)
             :error ? (<MessageBox>{error}</MessageBox>)
             :(
-                <section className="slider">         
+                <div className = "productarea" id = "products">         
                 {
                     products.map(product=>(
                         <ProductCard key={product._id} product = {product}></ProductCard>
                     ))
                 }
                               
-                </section>
+               </div>
             )
         }
        

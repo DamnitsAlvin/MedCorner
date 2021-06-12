@@ -7,7 +7,7 @@ export default function ProductCard(props){
     
     const  {product} = props; 
     return(
-        <li className={product._id} key={product._id}>
+        <li className="card " key={product._id}>
             <div className="box">
                 <div className="slide-img">
                 <img alt="1" src={product.image}/>
