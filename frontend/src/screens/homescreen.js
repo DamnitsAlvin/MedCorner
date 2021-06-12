@@ -4,8 +4,10 @@ import {listProducts} from "../action/productAction";
 import Loading from "../components/Loading";
 import MessageBox from "../components/MessageBox";
 import ProductCard from "../components/productCard";
-
 import Slides from "../components/slides";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 
@@ -18,6 +20,13 @@ export default function Homepage(){
         dispatch(listProducts());
     },[dispatch]);
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 6,
+        slidesToScroll: 8
+      };
     return(
     <div>
          <Slides/>
@@ -72,19 +81,21 @@ export default function Homepage(){
         <div className="latest-product-header">
             <h1>Featured Items</h1>
         </div>
+       
         {loading ? (<Loading></Loading>)
             :error ? (<MessageBox>{error}</MessageBox>)
             :(
-                <div className = "productarea" id = "products">         
+                <Slider {...settings}>     
                 {
                     products.map(product=>(
                         <ProductCard key={product._id} product = {product}></ProductCard>
                     ))
                 }
-                              
-               </div>
+                </Slider>            
+              
             )
         }
+      
        
        
  

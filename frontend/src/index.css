@@ -27,8 +27,13 @@ code {
   padding:0;
 }
 .card{
+  display:flex;
+  justify-content: center;
+  align-items: center;
   border:2px solid black;
+  width:auto;
   margin:10px;
+  height: 28em;
 }
 .quan{
   display: inline-flex;
