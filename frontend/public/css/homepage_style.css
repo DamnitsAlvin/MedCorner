@@ -306,15 +306,7 @@ a{
 	padding: 15px;
   }
   
-  .carousel-inner{
-	  padding-top: 10px;
-  }
-  .carousel-item{
-	  width: 100%;
-	  padding-top: 24%;
-	  background-size: contain;
-	  background-repeat: no-repeat;
-  }
+ 
   
   .container_category{
 	padding-left: 150px;

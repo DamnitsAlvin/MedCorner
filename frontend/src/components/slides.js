@@ -1,39 +1,60 @@
 import React from "react"; 
 import promoinfo from "../data";
-
+import { Carousel } from 'react-bootstrap';
+import image1 from '../assets/images/banner1.jpg';
+import image2 from "../assets/images/banner2.jpg"; 
+import image3 from "../assets/images/banner3.jpg";
+import image4 from "../assets/images/banner4.jpg";
 export default function Slides(){
     return(
-      <div className="container-fluid promo">
-      <div id="myCarousel" className="carousel slide" data-ride="carousel">  
-        <ol className="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-            {
-                promoinfo.promos.map(promDet=>(
-                    <li data-target="#myCarousel" data-slide-to={promDet.slide_number}></li>
-                ))
-            }
-        </ol>
-        <div className="carousel-inner">
-          <a href="../Signup_Page/Signup_index.html" className="carousel-item active"><img src="./banner/banner4.jpg"/> </a> 
-        {
-            promoinfo.promos.map(promImg=>(
-                <img src={promImg.slide_image}  className="carousel-item"/> 
-            ))
-        }
-            
-        </div>
-      
-        <a href="#myCarousel" className="carousel-control-prev" role="button" data-slide-to="prev">
-          <span className="sr-only">Previous</span>
-          <span aria-hidden="true"></span>
-        </a>
-      
-        <a href="#myCarousel" className="carousel-control-next"  role="button" data-slide="next">
-          <span className="sr-only">Next</span>
-          <span  aria-hidden="true"></span>
-        </a>
-      </div>
-    </div>
+      <Carousel fade={true} pause={false}>
+      <Carousel.Item interval={2000}>
+        <img
+          className="d-block w-100"
+          src={image1}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item interval={2000}>
+        <img
+          className="d-block w-100"
+          src={image2}
+          alt="Third slide"
+        />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item interval={2000}>
+        <img
+          className="d-block w-100"
+          src={image3}
+          alt="Third slide"
+        />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item interval={2000}>
+        <img
+          className="d-block w-100"
+          src={image4}
+          alt="Third slide"
+        />
+        <Carousel.Caption>
+          <h3>Fourth slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
     );
 
 }

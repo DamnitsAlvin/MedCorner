@@ -19,7 +19,7 @@ export default function Homepage(){
     },[dispatch]);
 
     return(
-    <div>
+    <>
          <Slides/>
             <main id="main">
             <div className="container_category">
@@ -72,19 +72,24 @@ export default function Homepage(){
         <div className="latest-product-header">
             <h1>Featured Items</h1>
         </div>
+
+        <section className="slider"> 
         {loading ? (<Loading></Loading>)
             :error ? (<MessageBox>{error}</MessageBox>)
             :(
-                <section className="slider">         
+                     
+               <>
                 {
                     products.map(product=>(
                         <ProductCard key={product._id} product = {product}></ProductCard>
                     ))
                 }
+              </>
                               
-                </section>
+                
             )
         }
+        </section>
        
        
  
@@ -129,6 +134,6 @@ export default function Homepage(){
             </div>
             </div>
         </div>
-    </div>
+    </>
     );
 }
