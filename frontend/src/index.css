@@ -125,3 +125,16 @@ code {
   border-radius: 5px;
   padding: 15px;
 }
+.carousel-inner{
+  margin-top: 0%;
+  padding-top: 0%;
+}
+.container-fluid{
+  width: 100%;
+  
+}
+
+.carousel-item{
+  max-width: 100%;
+  align-content: center;
+}

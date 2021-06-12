@@ -14,7 +14,7 @@ export default function Slides(){
             }
         </ol>
         <div className="carousel-inner">
-          <a href="../Signup_Page/Signup_index.html" className="carousel-item active"><img src="./banner/banner4.jpg"/> </a> 
+          <img src="./banner/banner4.jpg" className="carousel-item active"/>
         {
             promoinfo.promos.map(promImg=>(
                 <img src={promImg.slide_image}  className="carousel-item"/> 
