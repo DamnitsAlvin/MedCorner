@@ -7,7 +7,7 @@ export default function ProductCard(props){
     
     const  {product} = props; 
     return(
-        <li className={product._id} key={product._id}>
+        <li className="item-a" key={product._id}>
             <div className="box">
                 <div className="slide-img">
                 <img alt="1" src={product.image}/>
@@ -16,12 +16,13 @@ export default function ProductCard(props){
                     </div>
                 </div>
 
-                <div className="detail-box"></div>   
-                <div className="type">
-                <Link to={`/products/${product._id}`}>{product.name}</Link>
-                <span>{product.Distributor}</span>
-                </div>
-                <Link to={`/products/${product._id}`} className="price">P{product.price}</Link>
+                <div className="detail-box">  
+                    <div className="type">
+                        <Link to={`/products/${product._id}`}>{product.name}</Link>
+                        <span>{product.Distributor}</span>
+                    </div>
+                    <Link to={`/products/${product._id}`} className="price">₱{product.price}</Link>
+                </div> 
             </div>		
         </li> 
     );
