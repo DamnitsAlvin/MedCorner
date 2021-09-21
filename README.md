@@ -3,7 +3,7 @@
 Work In Progress
 
 
-<h1>Installation</h1>
+Installation
 1. The user must have the following installed in the computer:
     - Node JS 
     - MongoDB
